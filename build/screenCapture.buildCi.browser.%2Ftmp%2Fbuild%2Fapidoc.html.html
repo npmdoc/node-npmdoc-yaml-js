@@ -1,0 +1,4033 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/connec/yaml-js#readme">yaml-js (v0.1.4)</a>
+</h1>
+<h4>Pure Javascript YAML loader and dumper, ported from PyYAML</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js">module yaml-js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.compose">
+            function <span class="apidocSignatureSpan">yaml-js.</span>compose
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.compose_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>compose_all
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.dump">
+            function <span class="apidocSignatureSpan">yaml-js.</span>dump
+            <span class="apidocSignatureSpan">(data, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.dump_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>dump_all
+            <span class="apidocSignatureSpan">(documents, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.emit">
+            function <span class="apidocSignatureSpan">yaml-js.</span>emit
+            <span class="apidocSignatureSpan">(events, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.load">
+            function <span class="apidocSignatureSpan">yaml-js.</span>load
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.load_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>load_all
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.parse">
+            function <span class="apidocSignatureSpan">yaml-js.</span>parse
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.scan">
+            function <span class="apidocSignatureSpan">yaml-js.</span>scan
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.serialize">
+            function <span class="apidocSignatureSpan">yaml-js.</span>serialize
+            <span class="apidocSignatureSpan">(node, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.serialize_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>serialize_all
+            <span class="apidocSignatureSpan">(nodes, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>composer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>dumper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>emitter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>loader</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>nodes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>reader</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>representer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>resolver</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>scanner</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>serializer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>tokens</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">yaml-js.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.compose">module yaml-js.compose</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.compose.compose">
+            function <span class="apidocSignatureSpan">yaml-js.</span>compose
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.compose_all">module yaml-js.compose_all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.compose_all.compose_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>compose_all
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.composer">module yaml-js.composer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.composer.Composer">
+            function <span class="apidocSignatureSpan">yaml-js.composer.</span>Composer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.composer.ComposerError">
+            function <span class="apidocSignatureSpan">yaml-js.composer.</span>ComposerError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.dump">module yaml-js.dump</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.dump.dump">
+            function <span class="apidocSignatureSpan">yaml-js.</span>dump
+            <span class="apidocSignatureSpan">(data, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.dump_all">module yaml-js.dump_all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.dump_all.dump_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>dump_all
+            <span class="apidocSignatureSpan">(documents, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.dumper">module yaml-js.dumper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.dumper.Dumper">
+            function <span class="apidocSignatureSpan">yaml-js.dumper.</span>Dumper
+            <span class="apidocSignatureSpan">(stream, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.dumper.make_dumper">
+            function <span class="apidocSignatureSpan">yaml-js.dumper.</span>make_dumper
+            <span class="apidocSignatureSpan">(Emitter, Serializer, Representer, Resolver)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.emit">module yaml-js.emit</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.emit.emit">
+            function <span class="apidocSignatureSpan">yaml-js.</span>emit
+            <span class="apidocSignatureSpan">(events, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.emitter">module yaml-js.emitter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.emitter.Emitter">
+            function <span class="apidocSignatureSpan">yaml-js.emitter.</span>Emitter
+            <span class="apidocSignatureSpan">(stream, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.emitter.EmitterError">
+            function <span class="apidocSignatureSpan">yaml-js.emitter.</span>EmitterError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.errors">module yaml-js.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.errors.Mark">
+            function <span class="apidocSignatureSpan">yaml-js.errors.</span>Mark
+            <span class="apidocSignatureSpan">(line, column, buffer, pointer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.errors.MarkedYAMLError">
+            function <span class="apidocSignatureSpan">yaml-js.errors.</span>MarkedYAMLError
+            <span class="apidocSignatureSpan">(context, context_mark, problem, problem_mark, note)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.errors.YAMLError">
+            function <span class="apidocSignatureSpan">yaml-js.errors.</span>YAMLError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.events">module yaml-js.events</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.AliasEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>AliasEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.CollectionEndEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>CollectionEndEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.CollectionStartEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>CollectionStartEvent
+            <span class="apidocSignatureSpan">(anchor, tag, implicit, start_mark, end_mark, flow_style)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.DocumentEndEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>DocumentEndEvent
+            <span class="apidocSignatureSpan">(start_mark, end_mark, explicit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.DocumentStartEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>DocumentStartEvent
+            <span class="apidocSignatureSpan">(start_mark, end_mark, explicit, version, tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.Event">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>Event
+            <span class="apidocSignatureSpan">(start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.MappingEndEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>MappingEndEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.MappingStartEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>MappingStartEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.NodeEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>NodeEvent
+            <span class="apidocSignatureSpan">(anchor, start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.ScalarEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>ScalarEvent
+            <span class="apidocSignatureSpan">(anchor, tag, implicit, value, start_mark, end_mark, style)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.SequenceEndEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>SequenceEndEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.SequenceStartEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>SequenceStartEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.StreamEndEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>StreamEndEvent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.events.StreamStartEvent">
+            function <span class="apidocSignatureSpan">yaml-js.events.</span>StreamStartEvent
+            <span class="apidocSignatureSpan">(start_mark, end_mark, encoding)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.load">module yaml-js.load</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.load.load">
+            function <span class="apidocSignatureSpan">yaml-js.</span>load
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.load_all">module yaml-js.load_all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.load_all.load_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>load_all
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.loader">module yaml-js.loader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.loader.Loader">
+            function <span class="apidocSignatureSpan">yaml-js.loader.</span>Loader
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.loader.make_loader">
+            function <span class="apidocSignatureSpan">yaml-js.loader.</span>make_loader
+            <span class="apidocSignatureSpan">(Reader, Scanner, Parser, Composer, Resolver, Constructor)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.nodes">module yaml-js.nodes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.nodes.CollectionNode">
+            function <span class="apidocSignatureSpan">yaml-js.nodes.</span>CollectionNode
+            <span class="apidocSignatureSpan">(tag, value, start_mark, end_mark, flow_style)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.nodes.MappingNode">
+            function <span class="apidocSignatureSpan">yaml-js.nodes.</span>MappingNode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.nodes.Node">
+            function <span class="apidocSignatureSpan">yaml-js.nodes.</span>Node
+            <span class="apidocSignatureSpan">(tag, value, start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.nodes.ScalarNode">
+            function <span class="apidocSignatureSpan">yaml-js.nodes.</span>ScalarNode
+            <span class="apidocSignatureSpan">(tag, value, start_mark, end_mark, style)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.nodes.SequenceNode">
+            function <span class="apidocSignatureSpan">yaml-js.nodes.</span>SequenceNode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.parse">module yaml-js.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.parse.parse">
+            function <span class="apidocSignatureSpan">yaml-js.</span>parse
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.parser">module yaml-js.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.parser.Parser">
+            function <span class="apidocSignatureSpan">yaml-js.parser.</span>Parser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.parser.ParserError">
+            function <span class="apidocSignatureSpan">yaml-js.parser.</span>ParserError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.reader">module yaml-js.reader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.reader.Reader">
+            function <span class="apidocSignatureSpan">yaml-js.reader.</span>Reader
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.reader.ReaderError">
+            function <span class="apidocSignatureSpan">yaml-js.reader.</span>ReaderError
+            <span class="apidocSignatureSpan">(position1, character1, reason)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.representer">module yaml-js.representer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.representer.BaseRepresenter">
+            function <span class="apidocSignatureSpan">yaml-js.representer.</span>BaseRepresenter
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.representer.Representer">
+            function <span class="apidocSignatureSpan">yaml-js.representer.</span>Representer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.representer.RepresenterError">
+            function <span class="apidocSignatureSpan">yaml-js.representer.</span>RepresenterError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.resolver">module yaml-js.resolver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.resolver.BaseResolver">
+            function <span class="apidocSignatureSpan">yaml-js.resolver.</span>BaseResolver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.resolver.Resolver">
+            function <span class="apidocSignatureSpan">yaml-js.resolver.</span>Resolver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.resolver.ResolverError">
+            function <span class="apidocSignatureSpan">yaml-js.resolver.</span>ResolverError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.scan">module yaml-js.scan</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.scan.scan">
+            function <span class="apidocSignatureSpan">yaml-js.</span>scan
+            <span class="apidocSignatureSpan">(stream, Loader)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.scanner">module yaml-js.scanner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.scanner.Scanner">
+            function <span class="apidocSignatureSpan">yaml-js.scanner.</span>Scanner
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.scanner.ScannerError">
+            function <span class="apidocSignatureSpan">yaml-js.scanner.</span>ScannerError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.serialize">module yaml-js.serialize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.serialize.serialize">
+            function <span class="apidocSignatureSpan">yaml-js.</span>serialize
+            <span class="apidocSignatureSpan">(node, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.serialize_all">module yaml-js.serialize_all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.serialize_all.serialize_all">
+            function <span class="apidocSignatureSpan">yaml-js.</span>serialize_all
+            <span class="apidocSignatureSpan">(nodes, stream, Dumper, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.serializer">module yaml-js.serializer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.serializer.Serializer">
+            function <span class="apidocSignatureSpan">yaml-js.serializer.</span>Serializer
+            <span class="apidocSignatureSpan">(arg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.serializer.SerializerError">
+            function <span class="apidocSignatureSpan">yaml-js.serializer.</span>SerializerError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.tokens">module yaml-js.tokens</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.AliasToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>AliasToken
+            <span class="apidocSignatureSpan">(value, start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.AnchorToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>AnchorToken
+            <span class="apidocSignatureSpan">(value, start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.BlockEndToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockEndToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.BlockEntryToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockEntryToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.BlockMappingStartToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockMappingStartToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.BlockSequenceStartToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockSequenceStartToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.DirectiveToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>DirectiveToken
+            <span class="apidocSignatureSpan">(name, value, start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.DocumentEndToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>DocumentEndToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.DocumentStartToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>DocumentStartToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.FlowEntryToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowEntryToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.FlowMappingEndToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowMappingEndToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.FlowMappingStartToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowMappingStartToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.FlowSequenceEndToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowSequenceEndToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.FlowSequenceStartToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowSequenceStartToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.KeyToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>KeyToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.ScalarToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>ScalarToken
+            <span class="apidocSignatureSpan">(value, plain, start_mark, end_mark, style)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.StreamEndToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>StreamEndToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.StreamStartToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>StreamStartToken
+            <span class="apidocSignatureSpan">(start_mark, end_mark, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.TagToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>TagToken
+            <span class="apidocSignatureSpan">(value, start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.Token">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>Token
+            <span class="apidocSignatureSpan">(start_mark, end_mark)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.tokens.ValueToken">
+            function <span class="apidocSignatureSpan">yaml-js.tokens.</span>ValueToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.yaml-js.util">module yaml-js.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.StringStream">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>StringStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.clone">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>clone
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.extend">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>extend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.inspect">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>inspect
+            <span class="apidocSignatureSpan">(obj, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.is_empty">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>is_empty
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.pad_left">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>pad_left
+            <span class="apidocSignatureSpan">(str, char, length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.yaml-js.util.to_hex">
+            function <span class="apidocSignatureSpan">yaml-js.util.</span>to_hex
+            <span class="apidocSignatureSpan">(num)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js" id="apidoc.module.yaml-js">module yaml-js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.compose" id="apidoc.element.yaml-js.compose">
+        function <span class="apidocSignatureSpan">yaml-js.</span>compose
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose = function (stream, Loader) {
+  var _loader;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  return _loader.get_single_node();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.compose_all" id="apidoc.element.yaml-js.compose_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>compose_all
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose_all = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_node()) {
+    results.push(_loader.get_node());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.dump" id="apidoc.element.yaml-js.dump">
+        function <span class="apidocSignatureSpan">yaml-js.</span>dump
+        <span class="apidocSignatureSpan">(data, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dump = function (data, stream, Dumper, options) {
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  return exports.dump_all([data], stream, Dumper, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  '  in this place.'
+));
+// { phrase1: [ 'hello', 'world' ],
+//   phrase2: [ 'goodbye', 'world' ],
+//   phrase3: 'What is up in this place.' }
+
+// Dumping
+console.log(yaml.<span class="apidocCodeKeywordSpan">dump</span>({
+  phrase1: [ 'hello',   'world' ],
+  phrase2: [ 'goodbye', 'world' ],
+  phrase3: 'What is up in this place.'
+}));
+// phrase1: [hello, world]
+// phrase2: [goodbye, world]
+// phrase3: What is up in this place.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.dump_all" id="apidoc.element.yaml-js.dump_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>dump_all
+        <span class="apidocSignatureSpan">(documents, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dump_all = function (documents, stream, Dumper, options) {
+  var _dumper, dest, document, i, len;
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  dest = stream || new util.StringStream;
+  _dumper = new Dumper(dest, options);
+  try {
+    _dumper.open();
+    for (i = 0, len = documents.length; i &lt; len; i++) {
+      document = documents[i];
+      _dumper.represent(document);
+    }
+    _dumper.close();
+  } finally {
+    _dumper.dispose();
+  }
+  return stream || dest.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.dump = function(data, stream, Dumper, options) {
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+        options = {};
+    }
+    return exports.<span class="apidocCodeKeywordSpan">dump_all</span>([ data ], stream, Dumper, options);
+};
+this.dump_all = function(documents, stream, Dumper, options) {
+    var _dumper, dest, document, i, len;
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.emit" id="apidoc.element.yaml-js.emit">
+        function <span class="apidocSignatureSpan">yaml-js.</span>emit
+        <span class="apidocSignatureSpan">(events, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (events, stream, Dumper, options) {
+  var _dumper, dest, event, i, len;
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  dest = stream || new util.StringStream;
+  _dumper = new Dumper(dest, options);
+  try {
+    for (i = 0, len = events.length; i &lt; len; i++) {
+      event = events[i];
+      _dumper.emit(event);
+    }
+  } finally {
+    _dumper.dispose();
+  }
+  return stream || dest.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.anchors = {};
+  this.last_anchor_id = 0;
+  this.closed = null;
+}
+
+Serializer.prototype.open = function() {
+  if (this.closed === null) {
+    this.<span class="apidocCodeKeywordSpan">emit</span>(new events.StreamStartEvent(this.encoding));
+    return this.closed = false;
+  } else if (this.closed) {
+    throw new SerializerError('serializer is closed');
+  } else {
+    throw new SerializerError('serializer is already open');
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.load" id="apidoc.element.yaml-js.load">
+        function <span class="apidocSignatureSpan">yaml-js.</span>load
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (stream, Loader) {
+  var _loader;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  return _loader.get_single_data();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Server (e.g. node.js)
+var yaml = require('yaml-js');
+
+// Browser
+// &lt;script src='yaml.min.js'&gt;&lt;/script&gt;
+
+// Loading
+console.log(yaml.<span class="apidocCodeKeywordSpan">load</span>(
+'---\n' +
+'phrase1:\n' +
+'  - hello\n' +
+'  - &amp;world world\n' +
+'phrase2:\n' +
+'  - goodbye\n' +
+'  - *world\n' +
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.load_all" id="apidoc.element.yaml-js.load_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>load_all
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load_all = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_data()) {
+    results.push(_loader.get_data());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    _dumper.dispose();
+                }
+                return stream || dest.string;
+            };
+            if (typeof require !== "undefined" &amp;&amp; require !== null ? require.extensions : void 0) {
+                fs = require("fs");
+                require.extensions[".yml"] = require.extensions[".yaml"] = function(module, filename) {
+                    return module.exports = exports.<span class="apidocCodeKeywordSpan">load_all</span>(fs.readFileSync(filename
+, "utf8"));
+                };
+            }
+        }).call(this);
+    });
+    root["yaml"] = require_from(null, "")("yaml");
+}).call(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.parse" id="apidoc.element.yaml-js.parse">
+        function <span class="apidocSignatureSpan">yaml-js.</span>parse
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_event()) {
+    results.push(_loader.get_event());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.scan" id="apidoc.element.yaml-js.scan">
+        function <span class="apidocSignatureSpan">yaml-js.</span>scan
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_token()) {
+    results.push(_loader.get_token());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.serialize" id="apidoc.element.yaml-js.serialize">
+        function <span class="apidocSignatureSpan">yaml-js.</span>serialize
+        <span class="apidocSignatureSpan">(node, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize = function (node, stream, Dumper, options) {
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  return exports.serialize_all([node], stream, Dumper, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.object_keeper = [];
+  this.alias_key = null;
+}
+
+BaseRepresenter.prototype.represent = function(data) {
+  var node;
+  node = this.represent_data(data);
+  this.<span class="apidocCodeKeywordSpan">serialize</span>(node);
+  this.represented_objects = {};
+  this.object_keeper = [];
+  return this.alias_key = null;
+};
+
+BaseRepresenter.prototype.represent_data = function(data) {
+  var data_type, i, j, len, ref, representer, type;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.serialize_all" id="apidoc.element.yaml-js.serialize_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>serialize_all
+        <span class="apidocSignatureSpan">(nodes, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize_all = function (nodes, stream, Dumper, options) {
+  var _dumper, dest, i, len, node;
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  dest = stream || new util.StringStream;
+  _dumper = new Dumper(dest, options);
+  try {
+    _dumper.open();
+    for (i = 0, len = nodes.length; i &lt; len; i++) {
+      node = nodes[i];
+      _dumper.serialize(node);
+    }
+    _dumper.close();
+  } finally {
+    _dumper.dispose();
+  }
+  return stream || dest.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.serialize = function(node, stream, Dumper, options) {
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+        options = {};
+    }
+    return exports.<span class="apidocCodeKeywordSpan">serialize_all</span>([ node ], stream, Dumper, options);
+};
+this.serialize_all = function(nodes, stream, Dumper, options) {
+    var _dumper, dest, i, len, node;
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.compose" id="apidoc.module.yaml-js.compose">module yaml-js.compose</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.compose.compose" id="apidoc.element.yaml-js.compose.compose">
+        function <span class="apidocSignatureSpan">yaml-js.</span>compose
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose = function (stream, Loader) {
+  var _loader;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  return _loader.get_single_node();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.compose_all" id="apidoc.module.yaml-js.compose_all">module yaml-js.compose_all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.compose_all.compose_all" id="apidoc.element.yaml-js.compose_all.compose_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>compose_all
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compose_all = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_node()) {
+    results.push(_loader.get_node());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.composer" id="apidoc.module.yaml-js.composer">module yaml-js.composer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.composer.Composer" id="apidoc.element.yaml-js.composer.Composer">
+        function <span class="apidocSignatureSpan">yaml-js.composer.</span>Composer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Composer() {
+  this.anchors = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.composer.ComposerError" id="apidoc.element.yaml-js.composer.ComposerError">
+        function <span class="apidocSignatureSpan">yaml-js.composer.</span>ComposerError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ComposerError() {
+  return ComposerError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.get_event();
+  document = null;
+  if (!this.check_event(events.StreamEndEvent)) {
+    document = this.compose_document();
+  }
+  if (!this.check_event(events.StreamEndEvent)) {
+    event = this.get_event();
+    throw new exports.<span class="apidocCodeKeywordSpan">ComposerError</span>('expected a single document in the stream'
+;, document.start_mark, 'but found another document', event.start_mark);
+  }
+  this.get_event();
+  return document;
+};
+
+
+/*
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.dump" id="apidoc.module.yaml-js.dump">module yaml-js.dump</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.dump.dump" id="apidoc.element.yaml-js.dump.dump">
+        function <span class="apidocSignatureSpan">yaml-js.</span>dump
+        <span class="apidocSignatureSpan">(data, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dump = function (data, stream, Dumper, options) {
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  return exports.dump_all([data], stream, Dumper, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  '  in this place.'
+));
+// { phrase1: [ 'hello', 'world' ],
+//   phrase2: [ 'goodbye', 'world' ],
+//   phrase3: 'What is up in this place.' }
+
+// Dumping
+console.log(yaml.<span class="apidocCodeKeywordSpan">dump</span>({
+  phrase1: [ 'hello',   'world' ],
+  phrase2: [ 'goodbye', 'world' ],
+  phrase3: 'What is up in this place.'
+}));
+// phrase1: [hello, world]
+// phrase2: [goodbye, world]
+// phrase3: What is up in this place.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.dump_all" id="apidoc.module.yaml-js.dump_all">module yaml-js.dump_all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.dump_all.dump_all" id="apidoc.element.yaml-js.dump_all.dump_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>dump_all
+        <span class="apidocSignatureSpan">(documents, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dump_all = function (documents, stream, Dumper, options) {
+  var _dumper, dest, document, i, len;
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  dest = stream || new util.StringStream;
+  _dumper = new Dumper(dest, options);
+  try {
+    _dumper.open();
+    for (i = 0, len = documents.length; i &lt; len; i++) {
+      document = documents[i];
+      _dumper.represent(document);
+    }
+    _dumper.close();
+  } finally {
+    _dumper.dispose();
+  }
+  return stream || dest.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.dump = function(data, stream, Dumper, options) {
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+        options = {};
+    }
+    return exports.<span class="apidocCodeKeywordSpan">dump_all</span>([ data ], stream, Dumper, options);
+};
+this.dump_all = function(documents, stream, Dumper, options) {
+    var _dumper, dest, document, i, len;
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.dumper" id="apidoc.module.yaml-js.dumper">module yaml-js.dumper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.dumper.Dumper" id="apidoc.element.yaml-js.dumper.Dumper">
+        function <span class="apidocSignatureSpan">yaml-js.dumper.</span>Dumper
+        <span class="apidocSignatureSpan">(stream, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Dumper(stream, options) {
+  var i, len, ref;
+  if (options == null) {
+    options = {};
+  }
+  components[0].call(this, stream, options);
+  ref = components.slice(1);
+  for (i = 0, len = ref.length; i &lt; len; i++) {
+    component = ref[i];
+    component.call(this, options);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.dumper.make_dumper" id="apidoc.element.yaml-js.dumper.make_dumper">
+        function <span class="apidocSignatureSpan">yaml-js.dumper.</span>make_dumper
+        <span class="apidocSignatureSpan">(Emitter, Serializer, Representer, Resolver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">make_dumper = function (Emitter, Serializer, Representer, Resolver) {
+  var Dumper, components;
+  if (Emitter == null) {
+    Emitter = emitter.Emitter;
+  }
+  if (Serializer == null) {
+    Serializer = serializer.Serializer;
+  }
+  if (Representer == null) {
+    Representer = representer.Representer;
+  }
+  if (Resolver == null) {
+    Resolver = resolver.Resolver;
+  }
+  components = [Emitter, Serializer, Representer, Resolver];
+  return Dumper = (function() {
+    var component;
+
+    util.extend.apply(util, [Dumper.prototype].concat(slice.call((function() {
+      var i, len, results;
+      results = [];
+      for (i = 0, len = components.length; i &lt; len; i++) {
+        component = components[i];
+        results.push(component.prototype);
+      }
+      return results;
+    })())));
+
+    function Dumper(stream, options) {
+      var i, len, ref;
+      if (options == null) {
+        options = {};
+      }
+      components[0].call(this, stream, options);
+      ref = components.slice(1);
+      for (i = 0, len = ref.length; i &lt; len; i++) {
+        component = ref[i];
+        component.call(this, options);
+      }
+    }
+
+    return Dumper;
+
+  })();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+
+      return Dumper;
+
+    })();
+  };
+
+  this.Dumper = this.<span class="apidocCodeKeywordSpan">make_dumper</span>();
+
+}).call(this);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.emit" id="apidoc.module.yaml-js.emit">module yaml-js.emit</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.emit.emit" id="apidoc.element.yaml-js.emit.emit">
+        function <span class="apidocSignatureSpan">yaml-js.</span>emit
+        <span class="apidocSignatureSpan">(events, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (events, stream, Dumper, options) {
+  var _dumper, dest, event, i, len;
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  dest = stream || new util.StringStream;
+  _dumper = new Dumper(dest, options);
+  try {
+    for (i = 0, len = events.length; i &lt; len; i++) {
+      event = events[i];
+      _dumper.emit(event);
+    }
+  } finally {
+    _dumper.dispose();
+  }
+  return stream || dest.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.anchors = {};
+  this.last_anchor_id = 0;
+  this.closed = null;
+}
+
+Serializer.prototype.open = function() {
+  if (this.closed === null) {
+    this.<span class="apidocCodeKeywordSpan">emit</span>(new events.StreamStartEvent(this.encoding));
+    return this.closed = false;
+  } else if (this.closed) {
+    throw new SerializerError('serializer is closed');
+  } else {
+    throw new SerializerError('serializer is already open');
+  }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.emitter" id="apidoc.module.yaml-js.emitter">module yaml-js.emitter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.emitter.Emitter" id="apidoc.element.yaml-js.emitter.Emitter">
+        function <span class="apidocSignatureSpan">yaml-js.emitter.</span>Emitter
+        <span class="apidocSignatureSpan">(stream, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Emitter(stream, options) {
+  var ref;
+  this.stream = stream;
+  this.encoding = null;
+  this.states = [];
+  this.state = this.expect_stream_start;
+  this.events = [];
+  this.event = null;
+  this.indents = [];
+  this.indent = null;
+  this.flow_level = 0;
+  this.root_context = false;
+  this.sequence_context = false;
+  this.mapping_context = false;
+  this.simple_key_context = false;
+  this.line = 0;
+  this.column = 0;
+  this.whitespace = true;
+  this.indentation = true;
+  this.open_ended = false;
+  this.canonical = options.canonical, this.allow_unicode = options.allow_unicode;
+  if (this.canonical == null) {
+    this.canonical = false;
+  }
+  if (this.allow_unicode == null) {
+    this.allow_unicode = true;
+  }
+  this.best_indent = 1 &lt; options.indent &amp;&amp; options.indent &lt; 10 ? options.indent : 2;
+  this.best_width = options.width &gt; this.indent * 2 ? options.width : 80;
+  this.best_line_break = (ref = options.line_break) === '\r' || ref === '\n' || ref === '\r\n' ? options.line_break : '\n';
+  this.tag_prefixes = null;
+  this.prepared_anchor = null;
+  this.prepared_tag = null;
+  this.analysis = null;
+  this.style = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.emitter.EmitterError" id="apidoc.element.yaml-js.emitter.EmitterError">
+        function <span class="apidocSignatureSpan">yaml-js.emitter.</span>EmitterError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EmitterError() {
+  return EmitterError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   */
+
+  Emitter.prototype.error = function(message, context) {
+    var ref, ref1;
+    if (context) {
+      context = (ref = context != null ? (ref1 = context.constructor) != null ? ref1.name : void 0 : void 0) != null ? ref : util
+.inspect(context);
+    }
+    throw new exports.<span class="apidocCodeKeywordSpan">EmitterError</span>("" + message + (context ? " " +
+context : ''));
+  };
+
+  return Emitter;
+
+})();
+
+ScalarAnalysis = (function() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.errors" id="apidoc.module.yaml-js.errors">module yaml-js.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.errors.Mark" id="apidoc.element.yaml-js.errors.Mark">
+        function <span class="apidocSignatureSpan">yaml-js.errors.</span>Mark
+        <span class="apidocSignatureSpan">(line, column, buffer, pointer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Mark(line, column, buffer, pointer) {
+  this.line = line;
+  this.column = column;
+  this.buffer = buffer;
+  this.pointer = pointer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.errors.MarkedYAMLError" id="apidoc.element.yaml-js.errors.MarkedYAMLError">
+        function <span class="apidocSignatureSpan">yaml-js.errors.</span>MarkedYAMLError
+        <span class="apidocSignatureSpan">(context, context_mark, problem, problem_mark, note)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MarkedYAMLError(context, context_mark, problem, problem_mark, note) {
+  this.context = context;
+  this.context_mark = context_mark;
+  this.problem = problem;
+  this.problem_mark = problem_mark;
+  this.note = note;
+  MarkedYAMLError.__super__.constructor.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.errors.YAMLError" id="apidoc.element.yaml-js.errors.YAMLError">
+        function <span class="apidocSignatureSpan">yaml-js.errors.</span>YAMLError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function YAMLError(message) {
+  this.message = message;
+  YAMLError.__super__.constructor.call(this);
+  this.stack = this.toString() + '\n' + (new Error).stack.split('\n').slice(1).join('\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.events" id="apidoc.module.yaml-js.events">module yaml-js.events</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.AliasEvent" id="apidoc.element.yaml-js.events.AliasEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>AliasEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AliasEvent() {
+  return AliasEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  block = false;
+}
+if (indentless_sequence == null) {
+  indentless_sequence = false;
+}
+if (this.check_token(tokens.AliasToken)) {
+  token = this.get_token();
+  event = new events.<span class="apidocCodeKeywordSpan">AliasEvent</span>(token.value, token.start_mark, token.end_mark);
+  this.state = this.states.pop();
+} else {
+  anchor = null;
+  tag = null;
+  start_mark = end_mark = tag_mark = null;
+  if (this.check_token(tokens.AnchorToken)) {
+    token = this.get_token();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.CollectionEndEvent" id="apidoc.element.yaml-js.events.CollectionEndEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>CollectionEndEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CollectionEndEvent() {
+  return CollectionEndEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.CollectionStartEvent" id="apidoc.element.yaml-js.events.CollectionStartEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>CollectionStartEvent
+        <span class="apidocSignatureSpan">(anchor, tag, implicit, start_mark, end_mark, flow_style)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CollectionStartEvent(anchor, tag, implicit, start_mark, end_mark, flow_style) {
+  this.anchor = anchor;
+  this.tag = tag;
+  this.implicit = implicit;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.flow_style = flow_style;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.DocumentEndEvent" id="apidoc.element.yaml-js.events.DocumentEndEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>DocumentEndEvent
+        <span class="apidocSignatureSpan">(start_mark, end_mark, explicit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DocumentEndEvent(start_mark, end_mark, explicit) {
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.explicit = explicit;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  start_mark = end_mark = token.start_mark;
+  explicit = false;
+  if (this.check_token(tokens.DocumentEndToken)) {
+    token = this.get_token();
+    end_mark = token.end_mark;
+    explicit = true;
+  }
+  event = new events.<span class="apidocCodeKeywordSpan">DocumentEndEvent</span>(start_mark, end_mark, explicit);
+  this.state = 'parse_document_start';
+  return event;
+};
+
+Parser.prototype.parse_document_content = function() {
+  var event;
+  if (this.check_token(tokens.DirectiveToken, tokens.DocumentStartToken, tokens.DocumentEndToken, tokens.StreamEndToken)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.DocumentStartEvent" id="apidoc.element.yaml-js.events.DocumentStartEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>DocumentStartEvent
+        <span class="apidocSignatureSpan">(start_mark, end_mark, explicit, version, tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DocumentStartEvent(start_mark, end_mark, explicit, version, tags) {
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.explicit = explicit;
+  this.version = version;
+  this.tags = tags;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Parser.prototype.parse_implicit_document_start = function() {
+  var end_mark, event, start_mark, token;
+  if (!this.check_token(tokens.DirectiveToken, tokens.DocumentStartToken, tokens.StreamEndToken)) {
+    this.tag_handles = DEFAULT_TAGS;
+    token = this.peek_token();
+    start_mark = end_mark = token.start_mark;
+    event = new events.<span class="apidocCodeKeywordSpan">DocumentStartEvent</span>(start_mark, end_mark, false);
+    this.states.push('parse_document_end');
+    this.state = 'parse_block_node';
+    return event;
+  } else {
+    return this.parse_document_start();
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.Event" id="apidoc.element.yaml-js.events.Event">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>Event
+        <span class="apidocSignatureSpan">(start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Event(start_mark, end_mark) {
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.MappingEndEvent" id="apidoc.element.yaml-js.events.MappingEndEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>MappingEndEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MappingEndEvent() {
+  return MappingEndEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+  if (!this.check_token(tokens.BlockEndToken)) {
+    token = this.peek_token();
+    throw new exports.ParserError('while parsing a block mapping', this.marks.slice(-1)[0], "expected &lt;block
+ end&gt;, but found " + token.id, token.start_mark);
+  }
+  token = this.get_token();
+  event = new events.<span class="apidocCodeKeywordSpan">MappingEndEvent</span>(token.start_mark, token.end_mark);
+  this.state = this.states.pop();
+  this.marks.pop();
+  return event;
+};
+
+Parser.prototype.parse_block_mapping_value = function() {
+  var token;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.MappingStartEvent" id="apidoc.element.yaml-js.events.MappingStartEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>MappingStartEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MappingStartEvent() {
+  return MappingStartEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.state = this.states.pop();
+} else if (this.check_token(tokens.FlowSequenceStartToken)) {
+  end_mark = this.peek_token().end_mark;
+  event = new events.SequenceStartEvent(anchor, tag, implicit, start_mark, end_mark, true);
+  this.state = 'parse_flow_sequence_first_entry';
+} else if (this.check_token(tokens.FlowMappingStartToken)) {
+  end_mark = this.peek_token().end_mark;
+  event = new events.<span class="apidocCodeKeywordSpan">MappingStartEvent</span>(anchor, tag, implicit, start_mark, end_mark, true
+);
+  this.state = 'parse_flow_mapping_first_key';
+} else if (block &amp;&amp; this.check_token(tokens.BlockSequenceStartToken)) {
+  end_mark = this.peek_token().end_mark;
+  event = new events.SequenceStartEvent(anchor, tag, implicit, start_mark, end_mark, false);
+  this.state = 'parse_block_sequence_first_entry';
+} else if (block &amp;&amp; this.check_token(tokens.BlockMappingStartToken)) {
+  end_mark = this.peek_token().end_mark;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.NodeEvent" id="apidoc.element.yaml-js.events.NodeEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>NodeEvent
+        <span class="apidocSignatureSpan">(anchor, start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NodeEvent(anchor, start_mark, end_mark) {
+  this.anchor = anchor;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.ScalarEvent" id="apidoc.element.yaml-js.events.ScalarEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>ScalarEvent
+        <span class="apidocSignatureSpan">(anchor, tag, implicit, value, start_mark, end_mark, style)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScalarEvent(anchor, tag, implicit, value, start_mark, end_mark, style) {
+  this.anchor = anchor;
+  this.tag = tag;
+  this.implicit = implicit;
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.style = style;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if ((token.plain &amp;&amp; tag === null) || tag === '!') {
+    implicit = [true, false];
+  } else if (tag === null) {
+    implicit = [false, true];
+  } else {
+    implicit = [false, false];
+  }
+  event = new events.<span class="apidocCodeKeywordSpan">ScalarEvent</span>(anchor, tag, implicit, token.value, start_mark, end_mark
+, token.style);
+  this.state = this.states.pop();
+} else if (this.check_token(tokens.FlowSequenceStartToken)) {
+  end_mark = this.peek_token().end_mark;
+  event = new events.SequenceStartEvent(anchor, tag, implicit, start_mark, end_mark, true);
+  this.state = 'parse_flow_sequence_first_entry';
+} else if (this.check_token(tokens.FlowMappingStartToken)) {
+  end_mark = this.peek_token().end_mark;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.SequenceEndEvent" id="apidoc.element.yaml-js.events.SequenceEndEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>SequenceEndEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SequenceEndEvent() {
+  return SequenceEndEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+  if (!this.check_token(tokens.BlockEndToken)) {
+    token = this.peek_token();
+    throw new exports.ParserError('while parsing a block collection', this.marks.slice(-1)[0], "expected &lt;block
+ end&gt;, but found " + token.id, token.start_mark);
+  }
+  token = this.get_token();
+  event = new events.<span class="apidocCodeKeywordSpan">SequenceEndEvent</span>(token.start_mark, token.end_mark);
+  this.state = this.states.pop();
+  this.marks.pop();
+  return event;
+};
+
+Parser.prototype.parse_indentless_sequence_entry = function() {
+  var event, token;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.SequenceStartEvent" id="apidoc.element.yaml-js.events.SequenceStartEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>SequenceStartEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SequenceStartEvent() {
+  return SequenceStartEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (start_mark === null) {
+  start_mark = end_mark = this.peek_token().start_mark;
+}
+event = null;
+implicit = tag === null || tag === '!';
+if (indentless_sequence &amp;&amp; this.check_token(tokens.BlockEntryToken)) {
+  end_mark = this.peek_token().end_mark;
+  event = new events.<span class="apidocCodeKeywordSpan">SequenceStartEvent</span>(anchor, tag, implicit, start_mark, end_mark);
+  this.state = 'parse_indentless_sequence_entry';
+} else {
+  if (this.check_token(tokens.ScalarToken)) {
+    token = this.get_token();
+    end_mark = token.end_mark;
+    if ((token.plain &amp;&amp; tag === null) || tag === '!') {
+      implicit = [true, false];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.StreamEndEvent" id="apidoc.element.yaml-js.events.StreamEndEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>StreamEndEvent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StreamEndEvent() {
+  return StreamEndEvent.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  token = this.get_token();
+  end_mark = token.end_mark;
+  event = new events.DocumentStartEvent(start_mark, end_mark, true, version, tags);
+  this.states.push('parse_document_end');
+  this.state = 'parse_document_content';
+} else {
+  token = this.get_token();
+  event = new events.<span class="apidocCodeKeywordSpan">StreamEndEvent</span>(token.start_mark, token.end_mark);
+  if (this.states.length !== 0) {
+    throw new Error('assertion error, states should be empty');
+  }
+  if (this.marks.length !== 0) {
+    throw new Error('assertion error, marks should be empty');
+  }
+  this.state = null;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.events.StreamStartEvent" id="apidoc.element.yaml-js.events.StreamStartEvent">
+        function <span class="apidocSignatureSpan">yaml-js.events.</span>StreamStartEvent
+        <span class="apidocSignatureSpan">(start_mark, end_mark, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StreamStartEvent(start_mark, end_mark, encoding) {
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.encoding = encoding;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/*
+Parse the stream start.
+ */
+
+Parser.prototype.parse_stream_start = function() {
+  var event, token;
+  token = this.get_token();
+  event = new events.<span class="apidocCodeKeywordSpan">StreamStartEvent</span>(token.start_mark, token.end_mark);
+  this.state = 'parse_implicit_document_start';
+  return event;
+};
+
+
+/*
+Parse an implicit document.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.load" id="apidoc.module.yaml-js.load">module yaml-js.load</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.load.load" id="apidoc.element.yaml-js.load.load">
+        function <span class="apidocSignatureSpan">yaml-js.</span>load
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (stream, Loader) {
+  var _loader;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  return _loader.get_single_data();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Server (e.g. node.js)
+var yaml = require('yaml-js');
+
+// Browser
+// &lt;script src='yaml.min.js'&gt;&lt;/script&gt;
+
+// Loading
+console.log(yaml.<span class="apidocCodeKeywordSpan">load</span>(
+'---\n' +
+'phrase1:\n' +
+'  - hello\n' +
+'  - &amp;world world\n' +
+'phrase2:\n' +
+'  - goodbye\n' +
+'  - *world\n' +
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.load_all" id="apidoc.module.yaml-js.load_all">module yaml-js.load_all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.load_all.load_all" id="apidoc.element.yaml-js.load_all.load_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>load_all
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load_all = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_data()) {
+    results.push(_loader.get_data());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    _dumper.dispose();
+                }
+                return stream || dest.string;
+            };
+            if (typeof require !== "undefined" &amp;&amp; require !== null ? require.extensions : void 0) {
+                fs = require("fs");
+                require.extensions[".yml"] = require.extensions[".yaml"] = function(module, filename) {
+                    return module.exports = exports.<span class="apidocCodeKeywordSpan">load_all</span>(fs.readFileSync(filename
+, "utf8"));
+                };
+            }
+        }).call(this);
+    });
+    root["yaml"] = require_from(null, "")("yaml");
+}).call(this);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.loader" id="apidoc.module.yaml-js.loader">module yaml-js.loader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.loader.Loader" id="apidoc.element.yaml-js.loader.Loader">
+        function <span class="apidocSignatureSpan">yaml-js.loader.</span>Loader
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Loader(stream) {
+  var i, len, ref;
+  components[0].call(this, stream);
+  ref = components.slice(1);
+  for (i = 0, len = ref.length; i &lt; len; i++) {
+    component = ref[i];
+    component.call(this);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.loader.make_loader" id="apidoc.element.yaml-js.loader.make_loader">
+        function <span class="apidocSignatureSpan">yaml-js.loader.</span>make_loader
+        <span class="apidocSignatureSpan">(Reader, Scanner, Parser, Composer, Resolver, Constructor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">make_loader = function (Reader, Scanner, Parser, Composer, Resolver, Constructor) {
+  var Loader, components;
+  if (Reader == null) {
+    Reader = reader.Reader;
+  }
+  if (Scanner == null) {
+    Scanner = scanner.Scanner;
+  }
+  if (Parser == null) {
+    Parser = parser.Parser;
+  }
+  if (Composer == null) {
+    Composer = composer.Composer;
+  }
+  if (Resolver == null) {
+    Resolver = resolver.Resolver;
+  }
+  if (Constructor == null) {
+    Constructor = constructor.Constructor;
+  }
+  components = [Reader, Scanner, Parser, Composer, Resolver, Constructor];
+  return Loader = (function() {
+    var component;
+
+    util.extend.apply(util, [Loader.prototype].concat(slice.call((function() {
+      var i, len, results;
+      results = [];
+      for (i = 0, len = components.length; i &lt; len; i++) {
+        component = components[i];
+        results.push(component.prototype);
+      }
+      return results;
+    })())));
+
+    function Loader(stream) {
+      var i, len, ref;
+      components[0].call(this, stream);
+      ref = components.slice(1);
+      for (i = 0, len = ref.length; i &lt; len; i++) {
+        component = ref[i];
+        component.call(this);
+      }
+    }
+
+    return Loader;
+
+  })();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+
+      return Loader;
+
+    })();
+  };
+
+  this.Loader = this.<span class="apidocCodeKeywordSpan">make_loader</span>();
+
+}).call(this);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.nodes" id="apidoc.module.yaml-js.nodes">module yaml-js.nodes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.nodes.CollectionNode" id="apidoc.element.yaml-js.nodes.CollectionNode">
+        function <span class="apidocSignatureSpan">yaml-js.nodes.</span>CollectionNode
+        <span class="apidocSignatureSpan">(tag, value, start_mark, end_mark, flow_style)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CollectionNode(tag, value, start_mark, end_mark, flow_style) {
+  this.tag = tag;
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.flow_style = flow_style;
+  CollectionNode.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.nodes.MappingNode" id="apidoc.element.yaml-js.nodes.MappingNode">
+        function <span class="apidocSignatureSpan">yaml-js.nodes.</span>MappingNode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MappingNode() {
+  return MappingNode.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    Composer.prototype.compose_mapping_node = function(anchor) {
+var end_event, item_key, item_value, node, start_event, tag;
+start_event = this.get_event();
+tag = start_event.tag;
+if (tag === null || tag === '!') {
+  tag = this.resolve(nodes.MappingNode, null, start_event.implicit);
+}
+node = new nodes.<span class="apidocCodeKeywordSpan">MappingNode</span>(tag, [], start_event.start_mark, null, start_event.flow_style
+);
+if (anchor !== null) {
+  this.anchors[anchor] = node;
+}
+while (!this.check_event(events.MappingEndEvent)) {
+  item_key = this.compose_node(node);
+  item_value = this.compose_node(node, item_key);
+  node.value.push([item_key, item_value]);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.nodes.Node" id="apidoc.element.yaml-js.nodes.Node">
+        function <span class="apidocSignatureSpan">yaml-js.nodes.</span>Node
+        <span class="apidocSignatureSpan">(tag, value, start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Node(tag, value, start_mark, end_mark) {
+  this.tag = tag;
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.unique_id = "node_" + (unique_id++);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.nodes.ScalarNode" id="apidoc.element.yaml-js.nodes.ScalarNode">
+        function <span class="apidocSignatureSpan">yaml-js.nodes.</span>ScalarNode
+        <span class="apidocSignatureSpan">(tag, value, start_mark, end_mark, style)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScalarNode(tag, value, start_mark, end_mark, style) {
+  this.tag = tag;
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.style = style;
+  ScalarNode.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Composer.prototype.compose_scalar_node = function(anchor) {
+  var event, node, tag;
+  event = this.get_event();
+  tag = event.tag;
+  if (tag === null || tag === '!') {
+    tag = this.resolve(nodes.ScalarNode, event.value, event.implicit);
+  }
+  node = new nodes.<span class="apidocCodeKeywordSpan">ScalarNode</span>(tag, event.value, event.start_mark, event.end_mark, event
+.style);
+  if (anchor !== null) {
+    this.anchors[anchor] = node;
+  }
+  return node;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.nodes.SequenceNode" id="apidoc.element.yaml-js.nodes.SequenceNode">
+        function <span class="apidocSignatureSpan">yaml-js.nodes.</span>SequenceNode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SequenceNode() {
+  return SequenceNode.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    Composer.prototype.compose_sequence_node = function(anchor) {
+var end_event, index, node, start_event, tag;
+start_event = this.get_event();
+tag = start_event.tag;
+if (tag === null || tag === '!') {
+  tag = this.resolve(nodes.SequenceNode, null, start_event.implicit);
+}
+node = new nodes.<span class="apidocCodeKeywordSpan">SequenceNode</span>(tag, [], start_event.start_mark, null, start_event.flow_style
+);
+if (anchor !== null) {
+  this.anchors[anchor] = node;
+}
+index = 0;
+while (!this.check_event(events.SequenceEndEvent)) {
+  node.value.push(this.compose_node(node, index));
+  index++;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.parse" id="apidoc.module.yaml-js.parse">module yaml-js.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.parse.parse" id="apidoc.element.yaml-js.parse.parse">
+        function <span class="apidocSignatureSpan">yaml-js.</span>parse
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_event()) {
+    results.push(_loader.get_event());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.parser" id="apidoc.module.yaml-js.parser">module yaml-js.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.parser.Parser" id="apidoc.element.yaml-js.parser.Parser">
+        function <span class="apidocSignatureSpan">yaml-js.parser.</span>Parser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser() {
+  this.current_event = null;
+  this.yaml_version = null;
+  this.tag_handles = {};
+  this.states = [];
+  this.marks = [];
+  this.state = 'parse_stream_start';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.parser.ParserError" id="apidoc.element.yaml-js.parser.ParserError">
+        function <span class="apidocSignatureSpan">yaml-js.parser.</span>ParserError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ParserError() {
+  return ParserError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+while (this.check_token(tokens.DocumentEndToken)) {
+  this.get_token();
+}
+if (!this.check_token(tokens.StreamEndToken)) {
+  start_mark = this.peek_token().start_mark;
+  ref = this.process_directives(), version = ref[0], tags = ref[1];
+  if (!this.check_token(tokens.DocumentStartToken)) {
+    throw new exports.<span class="apidocCodeKeywordSpan">ParserError</span>("expected '&lt;document start&gt;'
+;, but found " + (this.peek_token().id), this.peek_token().start_mark);
+  }
+  token = this.get_token();
+  end_mark = token.end_mark;
+  event = new events.DocumentStartEvent(start_mark, end_mark, true, version, tags);
+  this.states.push('parse_document_end');
+  this.state = 'parse_document_content';
+} else {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.reader" id="apidoc.module.yaml-js.reader">module yaml-js.reader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.reader.Reader" id="apidoc.element.yaml-js.reader.Reader">
+        function <span class="apidocSignatureSpan">yaml-js.reader.</span>Reader
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Reader(string) {
+  this.string = string;
+  this.line = 0;
+  this.column = 0;
+  this.index = 0;
+  this.check_printable();
+  this.string += '\x00';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.reader.ReaderError" id="apidoc.element.yaml-js.reader.ReaderError">
+        function <span class="apidocSignatureSpan">yaml-js.reader.</span>ReaderError
+        <span class="apidocSignatureSpan">(position1, character1, reason)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReaderError(position1, character1, reason) {
+  this.position = position1;
+  this.character = character1;
+  this.reason = reason;
+  ReaderError.__super__.constructor.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  Reader.prototype.check_printable = function() {
+    var character, match, position;
+    match = NON_PRINTABLE.exec(this.string);
+    if (match) {
+      character = match[0];
+      position = (this.string.length - this.index) + match.index;
+      throw new exports.<span class="apidocCodeKeywordSpan">ReaderError</span>(position, character.charCodeAt(), 'special characters
+ are not allowed');
+    }
+  };
+
+  return Reader;
+
+})();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.representer" id="apidoc.module.yaml-js.representer">module yaml-js.representer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.representer.BaseRepresenter" id="apidoc.element.yaml-js.representer.BaseRepresenter">
+        function <span class="apidocSignatureSpan">yaml-js.representer.</span>BaseRepresenter
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BaseRepresenter(arg) {
+  var ref;
+  ref = arg != null ? arg : {}, this.default_style = ref.default_style, this.default_flow_style = ref.default_flow_style;
+  this.represented_objects = {};
+  this.object_keeper = [];
+  this.alias_key = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.representer.Representer" id="apidoc.element.yaml-js.representer.Representer">
+        function <span class="apidocSignatureSpan">yaml-js.representer.</span>Representer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Representer() {
+  return Representer.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.representer.RepresenterError" id="apidoc.element.yaml-js.representer.RepresenterError">
+        function <span class="apidocSignatureSpan">yaml-js.representer.</span>RepresenterError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RepresenterError() {
+  return RepresenterError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Representer.prototype.represent_object = function(data) {
+  return this.represent_mapping('tag:yaml.org,2002:map', data);
+};
+
+Representer.prototype.represent_undefined = function(data) {
+  throw new exports.<span class="apidocCodeKeywordSpan">RepresenterError</span>("cannot represent an onbject: " + data
+);
+};
+
+Representer.prototype.ignore_aliases = function(data) {
+  var ref;
+  if (data == null) {
+    return true;
+  }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.resolver" id="apidoc.module.yaml-js.resolver">module yaml-js.resolver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.resolver.BaseResolver" id="apidoc.element.yaml-js.resolver.BaseResolver">
+        function <span class="apidocSignatureSpan">yaml-js.resolver.</span>BaseResolver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BaseResolver() {
+  this.resolver_exact_paths = [];
+  this.resolver_prefix_paths = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.resolver.Resolver" id="apidoc.element.yaml-js.resolver.Resolver">
+        function <span class="apidocSignatureSpan">yaml-js.resolver.</span>Resolver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Resolver() {
+  return Resolver.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.resolver.ResolverError" id="apidoc.element.yaml-js.resolver.ResolverError">
+        function <span class="apidocSignatureSpan">yaml-js.resolver.</span>ResolverError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResolverError() {
+  return ResolverError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.scan" id="apidoc.module.yaml-js.scan">module yaml-js.scan</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.scan.scan" id="apidoc.element.yaml-js.scan.scan">
+        function <span class="apidocSignatureSpan">yaml-js.</span>scan
+        <span class="apidocSignatureSpan">(stream, Loader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scan = function (stream, Loader) {
+  var _loader, results;
+  if (Loader == null) {
+    Loader = loader.Loader;
+  }
+  _loader = new Loader(stream);
+  results = [];
+  while (_loader.check_token()) {
+    results.push(_loader.get_token());
+  }
+  return results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.scanner" id="apidoc.module.yaml-js.scanner">module yaml-js.scanner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.scanner.Scanner" id="apidoc.element.yaml-js.scanner.Scanner">
+        function <span class="apidocSignatureSpan">yaml-js.scanner.</span>Scanner
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scanner() {
+  this.done = false;
+  this.flow_level = 0;
+  this.tokens = [];
+  this.fetch_stream_start();
+  this.tokens_taken = 0;
+  this.indent = -1;
+  this.indents = [];
+  this.allow_simple_key = true;
+  this.possible_simple_keys = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.scanner.ScannerError" id="apidoc.element.yaml-js.scanner.ScannerError">
+        function <span class="apidocSignatureSpan">yaml-js.scanner.</span>ScannerError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScannerError() {
+  return ScannerError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  if (char === '"') {
+    return this.fetch_double();
+  }
+  if (this.check_plain()) {
+    return this.fetch_plain();
+  }
+  throw new exports.<span class="apidocCodeKeywordSpan">ScannerError</span>('while scanning for the next token', null, &amp;#
+x22;found character " + char + " that cannot start any token", this.get_mark());
+};
+
+
+/*
+Return the number of the nearest possible simple key.
+ */
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.serialize" id="apidoc.module.yaml-js.serialize">module yaml-js.serialize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.serialize.serialize" id="apidoc.element.yaml-js.serialize.serialize">
+        function <span class="apidocSignatureSpan">yaml-js.</span>serialize
+        <span class="apidocSignatureSpan">(node, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize = function (node, stream, Dumper, options) {
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  return exports.serialize_all([node], stream, Dumper, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.object_keeper = [];
+  this.alias_key = null;
+}
+
+BaseRepresenter.prototype.represent = function(data) {
+  var node;
+  node = this.represent_data(data);
+  this.<span class="apidocCodeKeywordSpan">serialize</span>(node);
+  this.represented_objects = {};
+  this.object_keeper = [];
+  return this.alias_key = null;
+};
+
+BaseRepresenter.prototype.represent_data = function(data) {
+  var data_type, i, j, len, ref, representer, type;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.serialize_all" id="apidoc.module.yaml-js.serialize_all">module yaml-js.serialize_all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.serialize_all.serialize_all" id="apidoc.element.yaml-js.serialize_all.serialize_all">
+        function <span class="apidocSignatureSpan">yaml-js.</span>serialize_all
+        <span class="apidocSignatureSpan">(nodes, stream, Dumper, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">serialize_all = function (nodes, stream, Dumper, options) {
+  var _dumper, dest, i, len, node;
+  if (Dumper == null) {
+    Dumper = dumper.Dumper;
+  }
+  if (options == null) {
+    options = {};
+  }
+  dest = stream || new util.StringStream;
+  _dumper = new Dumper(dest, options);
+  try {
+    _dumper.open();
+    for (i = 0, len = nodes.length; i &lt; len; i++) {
+      node = nodes[i];
+      _dumper.serialize(node);
+    }
+    _dumper.close();
+  } finally {
+    _dumper.dispose();
+  }
+  return stream || dest.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.serialize = function(node, stream, Dumper, options) {
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+        options = {};
+    }
+    return exports.<span class="apidocCodeKeywordSpan">serialize_all</span>([ node ], stream, Dumper, options);
+};
+this.serialize_all = function(nodes, stream, Dumper, options) {
+    var _dumper, dest, i, len, node;
+    if (Dumper == null) {
+        Dumper = dumper.Dumper;
+    }
+    if (options == null) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.serializer" id="apidoc.module.yaml-js.serializer">module yaml-js.serializer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.serializer.Serializer" id="apidoc.element.yaml-js.serializer.Serializer">
+        function <span class="apidocSignatureSpan">yaml-js.serializer.</span>Serializer
+        <span class="apidocSignatureSpan">(arg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Serializer(arg) {
+  var ref;
+  ref = arg != null ? arg : {}, this.encoding = ref.encoding, this.explicit_start = ref.explicit_start, this.explicit_end = ref.
+explicit_end, this.version = ref.version, this.tags = ref.tags;
+  this.serialized_nodes = {};
+  this.anchors = {};
+  this.last_anchor_id = 0;
+  this.closed = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.serializer.SerializerError" id="apidoc.element.yaml-js.serializer.SerializerError">
+        function <span class="apidocSignatureSpan">yaml-js.serializer.</span>SerializerError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SerializerError() {
+  return SerializerError.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.tokens" id="apidoc.module.yaml-js.tokens">module yaml-js.tokens</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.AliasToken" id="apidoc.element.yaml-js.tokens.AliasToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>AliasToken
+        <span class="apidocSignatureSpan">(value, start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AliasToken(value, start_mark, end_mark) {
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.AnchorToken" id="apidoc.element.yaml-js.tokens.AnchorToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>AnchorToken
+        <span class="apidocSignatureSpan">(value, start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AnchorToken(value, start_mark, end_mark) {
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.BlockEndToken" id="apidoc.element.yaml-js.tokens.BlockEndToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockEndToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BlockEndToken() {
+  return BlockEndToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.flow_level !== 0) {
+    return;
+  }
+  results = [];
+  while (this.indent &gt; column) {
+    mark = this.get_mark();
+    this.indent = this.indents.pop();
+    results.push(this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">BlockEndToken</span>(mark, mark)));
+  }
+  return results;
+};
+
+
+/*
+Check if we need to increase indentation.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.BlockEntryToken" id="apidoc.element.yaml-js.tokens.BlockEntryToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockEntryToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BlockEntryToken() {
+  return BlockEntryToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      this.tokens.push(new tokens.BlockSequenceStartToken(mark, mark));
+    }
+  }
+  this.allow_simple_key = true;
+  this.remove_possible_simple_key();
+  start_mark = this.get_mark();
+  this.forward();
+  return this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">BlockEntryToken</span>(start_mark, this.get_mark()));
+};
+
+Scanner.prototype.fetch_key = function() {
+  var mark, start_mark;
+  if (this.flow_level === 0) {
+    if (!this.allow_simple_key) {
+      throw new exports.ScannerError(null, null, 'mapping keys are not allowed here', this.get_mark());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.BlockMappingStartToken" id="apidoc.element.yaml-js.tokens.BlockMappingStartToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockMappingStartToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BlockMappingStartToken() {
+  return BlockMappingStartToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var mark, start_mark;
+if (this.flow_level === 0) {
+  if (!this.allow_simple_key) {
+    throw new exports.ScannerError(null, null, 'mapping keys are not allowed here', this.get_mark());
+  }
+  if (this.add_indent(this.column)) {
+    mark = this.get_mark();
+    this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">BlockMappingStartToken</span>(mark, mark));
+  }
+}
+this.allow_simple_key = !this.flow_level;
+this.remove_possible_simple_key();
+start_mark = this.get_mark();
+this.forward();
+return this.tokens.push(new tokens.KeyToken(start_mark, this.get_mark()));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.BlockSequenceStartToken" id="apidoc.element.yaml-js.tokens.BlockSequenceStartToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>BlockSequenceStartToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BlockSequenceStartToken() {
+  return BlockSequenceStartToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var mark, start_mark;
+if (this.flow_level === 0) {
+  if (!this.allow_simple_key) {
+    throw new exports.ScannerError(null, null, 'sequence entries are not allowed here', this.get_mark());
+  }
+  if (this.add_indent(this.column)) {
+    mark = this.get_mark();
+    this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">BlockSequenceStartToken</span>(mark, mark));
+  }
+}
+this.allow_simple_key = true;
+this.remove_possible_simple_key();
+start_mark = this.get_mark();
+this.forward();
+return this.tokens.push(new tokens.BlockEntryToken(start_mark, this.get_mark()));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.DirectiveToken" id="apidoc.element.yaml-js.tokens.DirectiveToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>DirectiveToken
+        <span class="apidocSignatureSpan">(name, value, start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DirectiveToken(name, value, start_mark, end_mark) {
+  this.name = name;
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else {
+    end_mark = this.get_mark();
+    while (ref = this.peek(), indexOf.call(C_LB + '\x00', ref) &lt; 0) {
+      this.forward();
+    }
+  }
+  this.scan_directive_ignored_line(start_mark);
+  return new tokens.<span class="apidocCodeKeywordSpan">DirectiveToken</span>(name, value, start_mark, end_mark);
+};
+
+
+/*
+See the specification for details.
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.DocumentEndToken" id="apidoc.element.yaml-js.tokens.DocumentEndToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>DocumentEndToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DocumentEndToken() {
+  return DocumentEndToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.DocumentStartToken" id="apidoc.element.yaml-js.tokens.DocumentStartToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>DocumentStartToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DocumentStartToken() {
+  return DocumentStartToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.FlowEntryToken" id="apidoc.element.yaml-js.tokens.FlowEntryToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowEntryToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FlowEntryToken() {
+  return FlowEntryToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Scanner.prototype.fetch_flow_entry = function() {
+  var start_mark;
+  this.allow_simple_key = true;
+  this.remove_possible_simple_key();
+  start_mark = this.get_mark();
+  this.forward();
+  return this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">FlowEntryToken</span>(start_mark, this.get_mark()));
+};
+
+Scanner.prototype.fetch_block_entry = function() {
+  var mark, start_mark;
+  if (this.flow_level === 0) {
+    if (!this.allow_simple_key) {
+      throw new exports.ScannerError(null, null, 'sequence entries are not allowed here', this.get_mark());
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.FlowMappingEndToken" id="apidoc.element.yaml-js.tokens.FlowMappingEndToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowMappingEndToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FlowMappingEndToken() {
+  return FlowMappingEndToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.FlowMappingStartToken" id="apidoc.element.yaml-js.tokens.FlowMappingStartToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowMappingStartToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FlowMappingStartToken() {
+  return FlowMappingStartToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.FlowSequenceEndToken" id="apidoc.element.yaml-js.tokens.FlowSequenceEndToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowSequenceEndToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FlowSequenceEndToken() {
+  return FlowSequenceEndToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.FlowSequenceStartToken" id="apidoc.element.yaml-js.tokens.FlowSequenceStartToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>FlowSequenceStartToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FlowSequenceStartToken() {
+  return FlowSequenceStartToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.KeyToken" id="apidoc.element.yaml-js.tokens.KeyToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>KeyToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function KeyToken() {
+  return KeyToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      this.tokens.push(new tokens.BlockMappingStartToken(mark, mark));
+    }
+  }
+  this.allow_simple_key = !this.flow_level;
+  this.remove_possible_simple_key();
+  start_mark = this.get_mark();
+  this.forward();
+  return this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">KeyToken</span>(start_mark, this.get_mark()));
+};
+
+Scanner.prototype.fetch_value = function() {
+  var key, mark, start_mark;
+  if (key = this.possible_simple_keys[this.flow_level]) {
+    delete this.possible_simple_keys[this.flow_level];
+    this.tokens.splice(key.token_number - this.tokens_taken, 0, new tokens.KeyToken(key.mark, key.mark));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.ScalarToken" id="apidoc.element.yaml-js.tokens.ScalarToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>ScalarToken
+        <span class="apidocSignatureSpan">(value, plain, start_mark, end_mark, style)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScalarToken(value, plain, start_mark, end_mark, style) {
+  this.value = value;
+  this.plain = plain;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.style = style;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  if (chomping !== false) {
+    chunks.push(line_break);
+  }
+  if (chomping === true) {
+    chunks = chunks.concat(breaks);
+  }
+  return new tokens.<span class="apidocCodeKeywordSpan">ScalarToken</span>(chunks.join(''), false, start_mark, end_mark
+, style);
+};
+
+
+/*
+See the specification for details.
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.StreamEndToken" id="apidoc.element.yaml-js.tokens.StreamEndToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>StreamEndToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StreamEndToken() {
+  return StreamEndToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Scanner.prototype.fetch_stream_end = function() {
+  var mark;
+  this.unwind_indent(-1);
+  this.remove_possible_simple_key();
+  this.allow_possible_simple_key = false;
+  this.possible_simple_keys = {};
+  mark = this.get_mark();
+  this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">StreamEndToken</span>(mark, mark));
+  return this.done = true;
+};
+
+Scanner.prototype.fetch_directive = function() {
+  this.unwind_indent(-1);
+  this.remove_possible_simple_key();
+  this.allow_simple_key = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.StreamStartToken" id="apidoc.element.yaml-js.tokens.StreamStartToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>StreamStartToken
+        <span class="apidocSignatureSpan">(start_mark, end_mark, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StreamStartToken(start_mark, end_mark, encoding) {
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+  this.encoding = encoding;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.indent = column;
+  return true;
+};
+
+Scanner.prototype.fetch_stream_start = function() {
+  var mark;
+  mark = this.get_mark();
+  return this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">StreamStartToken</span>(mark, mark, this.encoding));
+};
+
+Scanner.prototype.fetch_stream_end = function() {
+  var mark;
+  this.unwind_indent(-1);
+  this.remove_possible_simple_key();
+  this.allow_possible_simple_key = false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.TagToken" id="apidoc.element.yaml-js.tokens.TagToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>TagToken
+        <span class="apidocSignatureSpan">(value, start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TagToken(value, start_mark, end_mark) {
+  this.value = value;
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+    suffix = this.scan_tag_uri('tag', start_mark);
+  }
+  char = this.peek();
+  if (indexOf.call(C_LB + '\x00 ', char) &lt; 0) {
+    throw new exports.ScannerError('while scanning a tag', start_mark, "expected ' ' but found " +
+char, this.get_mark());
+  }
+  return new tokens.<span class="apidocCodeKeywordSpan">TagToken</span>([handle, suffix], start_mark, this.get_mark());
+};
+
+
+/*
+See the specification for details.
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.Token" id="apidoc.element.yaml-js.tokens.Token">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>Token
+        <span class="apidocSignatureSpan">(start_mark, end_mark)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Token(start_mark, end_mark) {
+  this.start_mark = start_mark;
+  this.end_mark = end_mark;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.tokens.ValueToken" id="apidoc.element.yaml-js.tokens.ValueToken">
+        function <span class="apidocSignatureSpan">yaml-js.tokens.</span>ValueToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ValueToken() {
+  return ValueToken.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      }
+    }
+    this.allow_simple_key = !this.flow_level;
+    this.remove_possible_simple_key();
+  }
+  start_mark = this.get_mark();
+  this.forward();
+  return this.tokens.push(new tokens.<span class="apidocCodeKeywordSpan">ValueToken</span>(start_mark, this.get_mark()));
+};
+
+Scanner.prototype.fetch_alias = function() {
+  this.save_possible_simple_key();
+  this.allow_simple_key = false;
+  return this.tokens.push(this.scan_anchor(tokens.AliasToken));
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.yaml-js.util" id="apidoc.module.yaml-js.util">module yaml-js.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.StringStream" id="apidoc.element.yaml-js.util.StringStream">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>StringStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StringStream() {
+  this.string = '';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.clone" id="apidoc.element.yaml-js.util.clone">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>clone
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (obj) {
+  return _this.extend({}, obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if ((this.event.version || this.event.tags) &amp;&amp; this.open_ended) {
+  this.write_indicator('...', true);
+  this.write_indent();
+}
+if (this.event.version) {
+  this.write_version_directive(this.prepare_version(this.event.version));
+}
+this.tag_prefixes = util.<span class="apidocCodeKeywordSpan">clone</span>(DEFAULT_TAG_PREFIXES);
+if (this.event.tags) {
+  ref = ((function() {
+    var ref, results;
+    ref = this.event.tags;
+    results = [];
+    for (k in ref) {
+      if (!hasProp.call(ref, k)) continue;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.extend" id="apidoc.element.yaml-js.util.extend">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>extend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function () {
+  var destination, i, k, len, source, sources, v;
+  destination = arguments[0], sources = 2 &lt;= arguments.length ? slice.call(arguments, 1) : [];
+  for (i = 0, len = sources.length; i &lt; len; i++) {
+    source = sources[i];
+    for (k in source) {
+      v = source[k];
+      destination[k] = v;
+    }
+  }
+  return destination;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    BaseResolver.add_implicit_resolver = function(tag, regexp, first) {
+var base, char, i, len, results;
+if (first == null) {
+  first = [null];
+}
+if (!this.prototype.hasOwnProperty('yaml_implicit_resolvers')) {
+  this.prototype.yaml_implicit_resolvers = util.<span class="apidocCodeKeywordSpan">extend</span>({}, this.prototype.yaml_implicit_resolvers
+);
+}
+results = [];
+for (i = 0, len = first.length; i &lt; len; i++) {
+  char = first[i];
+  results.push(((base = this.prototype.yaml_implicit_resolvers)[char] != null ? base[char] : base[char] = []).push([tag, regexp]));
+}
+return results;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.inspect" id="apidoc.element.yaml-js.util.inspect">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>inspect
+        <span class="apidocSignatureSpan">(obj, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments[2] !== undefined) ctx.depth = arguments[2];
+  if (arguments[3] !== undefined) ctx.colors = arguments[3];
+  if (typeof opts === 'boolean') {
+    // legacy...
+    ctx.showHidden = opts;
+  }
+  // Set default and user-specified options
+  ctx = Object.assign({}, inspect.defaultOptions, ctx, opts);
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  if (ctx.maxArrayLength === null) ctx.maxArrayLength = Infinity;
+  return formatValue(ctx, obj, ctx.depth);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /*
+  Helper for common error pattern.
+   */
+
+  Emitter.prototype.error = function(message, context) {
+    var ref, ref1;
+    if (context) {
+      context = (ref = context != null ? (ref1 = context.constructor) != null ? ref1.name : void 0 : void 0) != null ? ref : util
+.<span class="apidocCodeKeywordSpan">inspect</span>(context);
+    }
+    throw new exports.EmitterError("" + message + (context ? " " + context : ''));
+  };
+
+  return Emitter;
+
+})();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.is_empty" id="apidoc.element.yaml-js.util.is_empty">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>is_empty
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">is_empty = function (obj) {
+  var key;
+  if (Array.isArray(obj) || typeof obj === 'string') {
+    return obj.length === 0;
+  }
+  for (key in obj) {
+    if (!hasProp.call(obj, key)) continue;
+    return false;
+  }
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function BaseResolver() {
+  this.resolver_exact_paths = [];
+  this.resolver_prefix_paths = [];
+}
+
+BaseResolver.prototype.descend_resolver = function(current_node, current_index) {
+  var depth, exact_paths, i, j, kind, len, len1, path, prefix_paths, ref, ref1, ref2, ref3;
+  if (util.<span class="apidocCodeKeywordSpan">is_empty</span>(this.yaml_path_resolvers)) {
+    return;
+  }
+  exact_paths = {};
+  prefix_paths = [];
+  if (current_node) {
+    depth = this.resolver_prefix_paths.length;
+    ref = this.resolver_prefix_paths.slice(-1)[0];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.pad_left" id="apidoc.element.yaml-js.util.pad_left">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>pad_left
+        <span class="apidocSignatureSpan">(str, char, length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pad_left = function (str, char, length) {
+  str = String(str);
+  if (str.length &gt;= length) {
+    return str;
+  } else if (str.length + 1 === length) {
+    return "" + char + str;
+  } else {
+    return "" + (new Array(length - str.length + 1).join(char)) + str;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (start &lt; end) {
+    data = text.slice(start, end);
+    this.column += data.length;
+    this.stream.write(data, this.encoding);
+    start = end;
+  }
+  if (char != null) {
+    data = char in ESCAPE_REPLACEMENTS ? '\\' + ESCAPE_REPLACEMENTS[char] : char &lt;= '\xFF' ? "\\x&amp;#
+x22; + (util.<span class="apidocCodeKeywordSpan">pad_left</span>(util.to_hex(char), '0', 2)) : char &lt;= '\uFFFF' ? "\\u" + (util.pad_left(util.to_hex(char), '0', 4)) : "\\U" + (util.pad_left(util.to_hex(char), '0', 16));
+    this.column += data.length;
+    this.stream.write(data, this.encoding);
+    start = end + 1;
+  }
+}
+if (split &amp;&amp; (0 &lt; end &amp;&amp; end &lt; text.length - 1) &amp;&amp; (char === ' ' || start &gt;
+;= end) &amp;&amp; this.column + (end - start) &gt; this.best_width) {
+  data = text.slice(start, end) + "\\";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.yaml-js.util.to_hex" id="apidoc.element.yaml-js.util.to_hex">
+        function <span class="apidocSignatureSpan">yaml-js.util.</span>to_hex
+        <span class="apidocSignatureSpan">(num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">to_hex = function (num) {
+  if (typeof num === 'string') {
+    num = num.charCodeAt(0);
+  }
+  return num.toString(16);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (start &lt; end) {
+    data = text.slice(start, end);
+    this.column += data.length;
+    this.stream.write(data, this.encoding);
+    start = end;
+  }
+  if (char != null) {
+    data = char in ESCAPE_REPLACEMENTS ? '\\' + ESCAPE_REPLACEMENTS[char] : char &lt;= '\xFF' ? "\\x&amp;#
+x22; + (util.pad_left(util.<span class="apidocCodeKeywordSpan">to_hex</span>(char), '0', 2)) : char &lt;= '\uFFFF' ? "\\u" + (util.pad_left(util.to_hex(char), '0', 4)) : "\\U" + (util.pad_left(util.to_hex(char), '0', 16));
+    this.column += data.length;
+    this.stream.write(data, this.encoding);
+    start = end + 1;
+  }
+}
+if (split &amp;&amp; (0 &lt; end &amp;&amp; end &lt; text.length - 1) &amp;&amp; (char === ' ' || start &gt;
+;= end) &amp;&amp; this.column + (end - start) &gt; this.best_width) {
+  data = text.slice(start, end) + "\\";
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
