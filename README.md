@@ -1,4 +1,7 @@
-# api documentation for  [yaml-js (v0.1.4)](https://github.com/connec/yaml-js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-yaml-js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-yaml-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-yaml-js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-yaml-js)
+# npmdoc-yaml-js
+
+#### basic api documentation for  [yaml-js (v0.1.5)](https://github.com/connec/yaml-js#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-yaml-js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-yaml-js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-yaml-js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-yaml-js)
+
 #### Pure Javascript YAML loader and dumper, ported from PyYAML
 
 [![NPM](https://nodei.co/npm/yaml-js.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/yaml-js)
@@ -24,16 +27,20 @@
     "dependencies": {},
     "description": "Pure Javascript YAML loader and dumper, ported from PyYAML",
     "devDependencies": {
-        "coffee-script": "1.9.x",
-        "plantation": "0.0.15",
-        "squash": "0.0.13"
+        "chai": "^2.3.0",
+        "coffee-script": "^1.9.0",
+        "mocha": "^2.5.3",
+        "plantation": "0.0.16",
+        "sinon": "^1.17.6",
+        "sinon-chai": "^2.8.0",
+        "squash": "0.0.14"
     },
     "directories": {},
     "dist": {
-        "shasum": "ac965488a94daad5b65a92cab28c262407730fc0",
-        "tarball": "https://registry.npmjs.org/yaml-js/-/yaml-js-0.1.4.tgz"
+        "shasum": "a01369010b3558d8aaed2394615dfd0780fd8fac",
+        "tarball": "https://registry.npmjs.org/yaml-js/-/yaml-js-0.1.5.tgz"
     },
-    "gitHead": "0ea5266a2414467244d69a3145735b190c8b93ca",
+    "gitHead": "5d1588e1f4678318be9632da2e548c1612ae13a0",
     "homepage": "https://github.com/connec/yaml-js#readme",
     "license": "WTFPL",
     "main": "./lib/yaml",
@@ -49,7 +56,8 @@
         "url": "git+ssh://git@github.com/connec/yaml-js.git"
     },
     "scripts": {},
-    "version": "0.1.4"
+    "version": "0.1.5",
+    "bin": {}
 }
 ```
 
